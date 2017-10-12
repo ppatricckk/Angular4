@@ -1,0 +1,11 @@
+<p>{{'Server'}} has a ID:{{serverID}} and is {{getServerStatus()}}</p>
+
+<button class ="btn btn-primary" (click) = "onCreateServer()"
+[disabled]="!allowNewServer">Add Server</button><!-- Property Binding -->
+<p>{{createServerStatus}}</p><!-- String interpolation -->
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"><!-- event binding -->
+<p></p>
+<input type="text" class="form-control" [(ngModel)]="serverName" (input)="onUpdateServerName($event)"><!-- event binding -->
+<p></p><!-- Two way data binding -->
+<p>ServerName : {{serverName}}</p>
